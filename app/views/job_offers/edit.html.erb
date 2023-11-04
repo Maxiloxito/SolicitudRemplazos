@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Oferta de Trabajo</title>
+</head>
+<body>
+    <h1>Editar Oferta de Trabajo: <%= @job_offer.title %></h1>
+
+    <%= form_for @job_offer do |f| %>
+      <div>
+        <%= f.label :title, "Título" %><br>
+        <%= f.text_field :title %>
+      </div>
+
+      <div>
+        <%= f.label :position, "Posición" %><br>
+        <%= f.text_field :position %>
+      </div>
+
+      <div>
+        <%= f.label :description, "Descripción" %><br>
+        <%= f.text_area :description %>
+      </div>
+
+      <div>
+        <%= f.label :salary, "Salario" %><br>
+        <%= f.number_field :salary %>
+      </div>
+
+      <!-- Asegúrate de agregar todos los campos que quieras que el usuario pueda editar -->
+
+      <div>
+        <%= f.submit "Actualizar Oferta" %>
+      </div>
+    <% end %>
+
+    <footer>
+        <%= link_to "Volver al listado de ofertas", job_offers_path %>
+    </footer>
+</body>
+</html>

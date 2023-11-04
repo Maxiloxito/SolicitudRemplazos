@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard del Empleado</title>
+    <!-- Agrega tus enlaces a hojas de estilo (CSS) aquí si es necesario -->
+</head>
+<body>
+    <header>
+        <h1>Bienvenido, <%= current_user.first_name %>!</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#">Inicio</a></li>
+            <li><a href="#">Ofertas de Trabajo</a></li>
+            <li><a href="#">Perfil</a></li>
+            <li><a href="#">Cerrar Sesión</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section class="job-offers">
+            <h2>Ofertas de Trabajo Disponibles</h2>
+            <ul>
+                <% @job_offers.each do |offer| %>
+                    <li>
+                        <h3><%= offer.title %></h3>
+                        <p><%= offer.description %></p>
+                        <p>$<%= offer.salary %></p>
+                    </li>
+                <% end %>
+            </ul>
+        </section>
+    </main>
+
+
+</body>
+</html>

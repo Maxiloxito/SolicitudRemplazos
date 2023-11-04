@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nueva Oferta de Trabajo</title>
+</head>
+<body>
+    <h1>Crear Nueva Oferta de Trabajo</h1>
+    <% if @job_offer.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@job_offer.errors.count, "error") %> impidieron que la oferta de trabajo se guardara:</h2>
+
+        <ul>
+        <% @job_offer.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <%= form_for @job_offer do |f| %>
+      <div>
+        <%= f.label :title, "Título" %>
+        <%= f.text_field :title %>
+      </div>
+      
+      <div>
+        <%= f.label :position, "Cargo" %>
+        <%= f.text_field :position %>
+      </div>
+
+      <div>
+        <%= f.label :description, "Descripción" %>
+        <%= f.text_area :description %>
+      </div>
+      
+      <div>
+        <%= f.label :salary, "Salario" %>
+        <%= f.number_field :salary, step: 0.01 %>
+      </div>
+
+      <div>
+        <%= f.label :availability, "Disponibilidad" %>
+        <%= f.select :availability, JobOffer::STATUS_OPTIONS.keys %>
+      </div>
+
+      <div>
+        <%= f.submit "Crear Oferta" %>
+      </div>
+    <% end %>
+
+    <footer>
+        <%= link_to "Volver al listado de ofertas", job_offers_path %>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard del Empleador</title>
+    <!-- Agrega tus enlaces a hojas de estilo (CSS) aquí si es necesario -->
+</head>
+<body>
+    <header>
+        <h1>Bienvenido, <%= current_user.first_name %>!</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#">Inicio</a></li>
+            <li><a href="#">Solicitudes de Reemplazo</a></li>
+            <li><a href="#">Perfil</a></li>
+            <li><a href="#">Cerrar Sesión</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section class="replacement-requests">
+            <h2>Solicitudes de Reemplazo</h2>
+            <ul>
+                <% @replacement_requests.each do |request| %>
+                    <li>
+                        <h3><%= request.title %></h3>
+                        <p><%= request.description %></p>
+                    </li>
+                <% end %>
+            </ul>
+        </section>
+
+        <section class="job-offer-upload">
+            <%= link_to "Cargar Oferta de Trabajo", new_job_offer_path, class: "btn btn-color-1" %>
+        </section>
+    </main>
+
+    <footer>
+        <!-- Aquí puedes colocar información adicional o enlaces de pie de página -->
+    </footer>
+
+    <!-- Agrega tus enlaces a scripts de JavaScript aquí si es necesario -->
+</body>
+</html>

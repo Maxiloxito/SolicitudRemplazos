@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Main</title>
+    <%= stylesheet_link_tag 'style.css', media: 'all' %>  
+  </head>
+  <body>
+    <nav id="desktop-nav">
+      <div class="logo">ICCI</div>
+      <div>
+        <ul class="nav-links">
+          <li><a href="#">Acerca de</a></li>
+          <li><a href="#">None</a></li>
+          <li><a href="#">None</a></li>
+          <li><a href="#">None</a></li>
+        </ul>
+      </div>
+    </nav>
+    <section id="Imagen">
+      <div class="section-pic-container">
+        <%= image_tag("giphy.gif")%>
+
+      </div>
+      <div class="section-text">
+        <p class="section-text-p1">¿Buscas trabajo?</p>
+        <h1 class="title">Manda tu curriculum</h1>
+        <p class="section-text-p2">Aqui</p>
+        <div class="btn-container">
+          <%= link_to "Iniciar Sesion", login_path, class: "btn btn-color-1" %>
+        </div>
+    </section>
+    <section id="about">
+      <h1 class="title">Acerca de nosotros</h1>
+      <div class="section-container">
+        <div class="about-details-container">
+          <div class="about-containers">
+            <div class="details-container">
+              <h3>Datos</h3>
+              <p>
+                turip ip ip turip
+                illum cumque vel dolore. Ullam similique veniam maxime non? 
+                <br /><br />
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+                Optio qui eaque ea, harum voluptate vero, alias officia impedit 
+                minima dolore nobis beatae, quasi dignissimos quae natus 
+                possimus. Ab, dignissimos id!
+              </p>
+            </div>
+          </div>
+          <div class="text-container">
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic quis
+              reprehenderit et laborum, rem, dolore eum quod voluptate
+              exercitationem nobis, nihil esse debitis maxime facere minus sint
+              delectus velit in eos quo officiis explicabo deleniti dignissimos.
+              Eligendi illum libero dolorum cum laboriosam corrupti quidem,
+              reiciendis ea magnam? Nulla, impedit fuga!
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer>
+      <nav>
+        <div class="nav-links-container">
+          <ul class="nav-links">
+            <li><a href="#">alo</a></li>
+            <li><a href="#">alo</a></li>
+            <li><a href="#">alo</a></li>
+            <li><a href="#">alo</a></li>
+          </ul>
+        </div>
+      </nav>
+      <p>Ronux and Loxito production brrr ya saen</p>
+    </footer>
+  </body>
+</html>

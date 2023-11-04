@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ofertas de Trabajo</title>
+</head>
+<body>
+    <h1>Ofertas de Trabajo</h1>
+
+    <ul>
+      <% @job_offers.each do |offer| %>
+        <li>
+          <%= link_to offer.title, job_offer_path(offer) %> - <%= offer.position %> - $<%= offer.salary %>
+        </li>
+      <% end %>
+    </ul>
+
+    <%= link_to "Crear Nueva Oferta", new_job_offer_path %>
+</body>
+</html>
